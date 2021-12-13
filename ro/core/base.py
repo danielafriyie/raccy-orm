@@ -127,7 +127,7 @@ class Migration:
     def mk_migrations(self, table, fields):
         self._migrations[table] = fields
         with open(self.migrations_path, 'w') as file:
-            json.dump(self._migrations, file)
+            json.dump(self._migrations, file, indent=4)
 
     def get_migrations(self):
         if not path_exists(self.migrations_path, isfile=True):
